@@ -114,8 +114,8 @@ def cmpHash(hash1,hash2):
 
 
 
-img1 = cv2.imread('test.PNG')
-img2 = cv2.imread('test2.PNG')
+img1 = cv2.imread('990436704.jpg')
+img2 = cv2.imread('1526285226.jpg')
 
 hash1 = avgHash(img1)
 hash2 = avgHash(img2)
@@ -139,12 +139,12 @@ print(n)
 
 
 #读取测试图片
-img1=cv2.imread('test.PNG')
+img1=cv2.imread('990436704.jpg')
 diff1=getdiff(img1)
 print('img1:',getss(diff1))
 
 
-img2=cv2.imread('test3.PNG')
+img2=cv2.imread('1526285226.jpg')
 diff2=getdiff(img2)
 print('img1:',getss(diff2))
 
