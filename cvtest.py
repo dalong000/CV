@@ -92,3 +92,12 @@ n = cmpHash(hash1,hash2)
 print(n)
 
 
+hash1 = dhahs(img1)
+hash2 = dhahs(img2)
+
+print(hash1)
+print(hash2)
+n = cmpHash(hash1,hash2)
+print(n)
+
+
