@@ -42,6 +42,28 @@ def avgHash(img):
     return hash_str
 
 
+def dhahs(img):
+
+    #缩放9*8
+    img = cv2.resize(img,(9,8),interpolation = cv2.INTER_CUBIC)
+    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    hash_str =''
+
+    #每前一个像素大于后一个像素为1，相反为0，生成哈希
+    for i in range(8):
+        for j in range(8):
+            if gray[i,j] > gray[i,j+1]:
+                hash_str = hash_str+'1'
+            else :
+                hash_str = hash_str + '0'
+
+
+    return  hash_str
+
+
+
+
+
 
 
 def cmpHash(hash1,hash2):
