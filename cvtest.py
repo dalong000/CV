@@ -60,6 +60,25 @@ def dhahs(img):
 
     return  hash_str
 
+def getdiff(img):
+    #定义边长
+    Sidelength = 30
+    #图像缩放
+    img = cv2.resize(img(Sidelength,Sidelength),interpolation=cv2.INTER_CUBIC)
+    #灰度处理
+    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    #保存每行像素的平均值
+    avglist = []
+    #计算每行平均值，保存到avglist列表
+    for i in range(Sidelength):
+        avg =sum(gray[i]/len(gray[i]))
+        avglist.append(avg)
+
+
+
+def getss(list):
+    pass
+
 
 
 
