@@ -1,6 +1,11 @@
 import cv2
 import numpy as np
 
+import matplotlib.pyplot as plt
+
+
+
+
 h = 8
 w = 8
 def avgHash(img):
@@ -64,7 +69,7 @@ def getdiff(img):
     #定义边长
     Sidelength = 30
     #图像缩放
-    img = cv2.resize(img(Sidelength,Sidelength),interpolation=cv2.INTER_CUBIC)
+    img = cv2.resize(img, (Sidelength, Sidelength), interpolation=cv2.INTER_CUBIC)
     #灰度处理
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     #保存每行像素的平均值
@@ -74,10 +79,22 @@ def getdiff(img):
         avg =sum(gray[i]/len(gray[i]))
         avglist.append(avg)
 
+    return avglist
+
+
 
 
 def getss(list):
-    pass
+    #计算平均值
+    avg = sum(list)/len(list)
+    #定义方差变量ss，初值为0
+    ss =0
+    #计算方差
+    for l in list:
+        ss += (l - avg)*(1 - avg)/len(list)
+        #返回方差
+        return ss
+
 
 
 
@@ -118,5 +135,32 @@ print(hash1)
 print(hash2)
 n = cmpHash(hash1,hash2)
 print(n)
+
+
+
+#读取测试图片
+img1=cv2.imread('test.PNG')
+diff1=getdiff(img1)
+print('img1:',getss(diff1))
+
+
+img2=cv2.imread('test3.PNG')
+diff2=getdiff(img2)
+print('img1:',getss(diff2))
+
+r = range(30)
+
+x=range(30)
+
+plt.figure("avg")
+plt.plot(x,diff1,marker="*",label="$walk01$")
+plt.plot(x,diff2,marker="*",label="$walk03$")
+plt.title("avg")
+plt.legend()
+plt.show()
+
+
+
+plt.show()
 
 
