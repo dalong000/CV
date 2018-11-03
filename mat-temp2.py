@@ -6,9 +6,9 @@ import numpy as np
 
 def template():
     # 模板图片
-    tpl = cv.imread('image/1526285226.jpg')
+    tpl = cv.imread('image/990436704.jpg')
     # 目标图片
-    target = cv.imread('image/Tar.PNG')
+    target = cv.imread('image/t2.jpg')
     cv.imshow('template', tpl)
     cv.imshow('target', target)
 
