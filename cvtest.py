@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import cv2
 import numpy as np
 
@@ -146,7 +148,7 @@ print('img1:',getss(diff1))
 
 img2=cv2.imread('1526285226.jpg')
 diff2=getdiff(img2)
-print('img1:',getss(diff2))
+print('img2:',getss(diff2))
 
 r = range(30)
 
