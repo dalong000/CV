@@ -26,3 +26,4 @@ def template_image():
 template_image()
 cv.waitKey(0)
 cv.destroyAllWindows()
+#....
